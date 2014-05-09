@@ -19,7 +19,7 @@ class Controller
     public function view($view, $data)
     {
         // $data passed into method is now available in this view
-        require_once 'app/views/' . $view . '.php';
+        require_once '../app/views/' . $view . '.php';
     }
 
     /**
@@ -31,7 +31,7 @@ class Controller
      */
     public function model($model)
     {
-        require_once 'app/models/' . $model . '.php';
+        require_once '../app/models/' . $model . '.php';
         return new $model();
     }
 }
