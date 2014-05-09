@@ -1,2 +1,3 @@
 <?php
-echo $name;
+
+echo $data['name'] . ' is ' . $data['mood'];
