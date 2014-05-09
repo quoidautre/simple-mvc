@@ -18,6 +18,7 @@ class Controller
      */
     public function view($view, $data)
     {
+        // $data passed into method is now available in this view
         require_once 'app/views/' . $view . '.php';
     }
 
