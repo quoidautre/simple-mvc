@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Simple MVC</title>
-        <link rel="stylesheet" href="<?=ASSET_ROOT?>/css/global.css" />
+        <link rel="stylesheet" href="<?php echo ASSET_ROOT; ?>/css/global.css" />
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -22,7 +22,7 @@
                 <span class="inline-code">/home/index/[name]/[mood]</code>
             </p>
             
-            <p><?=$data['name']?> is <?=$data['mood']?></p>
+            <p><?php echo $data['name']; ?> is <?php echo $data['mood']; ?></p>
         </div>
     </body>
 </html>
