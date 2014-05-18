@@ -26,7 +26,7 @@ class App
      * Stores the parameters from the split URL
      * @var array
      */
-    protected $params = [];
+    protected $params = array();
 
     public function __construct()
     {
@@ -41,7 +41,7 @@ class App
             unset($url[0]);
         }
 
-        require_once '../app/controllers/' . $this->controller . '.php';
+        require_once '../app/controllers/' . ucfirst($this->controller) . '.php';
 
         $this->controller = new $this->controller;
 
@@ -58,7 +58,7 @@ class App
         }
 
         // Set parameters to either the array values or an empty array
-        $this->params = $url ? array_values($url) : [];
+        $this->params = $url ? array_values($url) : array();
 
         // Call the chosen method on the chosen controller, passing
         // in the parameters array (or empty array if above was false)
