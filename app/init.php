@@ -4,13 +4,13 @@ require_once 'core/App.php';
 require_once 'core/Controller.php';
 
 /*
-| Root path for inclusion.
-*/
+ * Root path for inclusion.
+ */
 define('INC_ROOT', dirname(__DIR__));
 
 /*
-| Root path for assets
-*/
+ * Root path for assets
+ */
 define('ASSET_ROOT',
     'http://'.$_SERVER['HTTP_HOST'].
     str_replace(

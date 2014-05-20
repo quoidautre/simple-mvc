@@ -1,14 +1,11 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+html {
+    font-size:62.5%;
 }
+
 body {
-    overflow-y: scroll;
-    font: 12pt 'Helvetica', 'Arial', sans-serif;
+    font: 1.4em 'Helvetica', 'Arial', sans-serif;
 }
+
 p {
     margin-bottom: 16px;
 }
@@ -18,17 +15,14 @@ p {
     width: 70%;
     margin: 32px auto;
 }
-header.main {
-    margin-bottom: 24px;
-}
 
-.inline-code {
+code {
     display: inline-block;
     background: #eee;
     color: #333;
     padding: 3px 5px;
     margin: 2px 0;
     border: 1px solid #ddd;
-    -webkit-border-radius: 3px;
     border-radius: 3px;
+    font-size:1.2em;
 }

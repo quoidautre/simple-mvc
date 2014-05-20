@@ -2,7 +2,7 @@ Options -MultiViews
 Options -Indexes
 
 RewriteEngine On
-RewriteBase /repos/simple-mvc/public/
+RewriteBase /GitHub/simple-mvc/public/
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
