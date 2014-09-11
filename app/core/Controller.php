@@ -12,7 +12,7 @@ class Controller
      * Render a view
      *
      * @param string $view The name of the view to include
-     * @param array $data Any data that needs to be available within the view
+     * @param array  $data Any data that needs to be available within the view
      *
      * @return void
      */
@@ -32,6 +32,7 @@ class Controller
     public function model($model)
     {
         require_once '../app/models/' . ucfirst($model) . '.php';
+
         return new $model();
     }
 }
