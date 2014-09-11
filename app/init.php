@@ -1,12 +1,12 @@
 <?php
 
-require_once 'core/App.php';
-require_once 'core/Controller.php';
-
 /*
  * Root path for inclusion.
  */
 define('INC_ROOT', dirname(__DIR__));
+
+require_once INC_ROOT . '/app/core/App.php';
+require_once INC_ROOT . '/app/core/Controller.php';
 
 /*
  * Root path for assets
@@ -16,6 +16,6 @@ define('ASSET_ROOT',
     str_replace(
         $_SERVER['DOCUMENT_ROOT'],
         '',
-        str_replace('\\', '/', dirname(__DIR__)).'/public'
+        str_replace('\\', '/', INC_ROOT).'/public'
     )
 );
