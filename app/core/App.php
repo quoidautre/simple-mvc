@@ -26,7 +26,7 @@ class App
      * Stores the parameters from the split URL
      * @var array
      */
-    protected $params = array();
+    protected $params = [];
 
     public function __construct()
     {
@@ -55,11 +55,11 @@ class App
         }
 
         // Set parameters to either the array values or an empty array
-        $this->params = $url ? array_values($url) : array();
+        $this->params = $url ? array_values($url) : [];
 
         // Call the chosen method on the chosen controller, passing
         // in the parameters array (or empty array if above was false)
-        call_user_func_array(array($this->controller, $this->method), $this->params);
+        call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
     /**
