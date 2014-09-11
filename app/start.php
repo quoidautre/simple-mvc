@@ -10,6 +10,9 @@ require_once INC_ROOT . '/vendor/autoload.php';
 require_once INC_ROOT . '/app/core/App.php';
 require_once INC_ROOT . '/app/core/Controller.php';
 
+// Require database component
+require_once INC_ROOT . '/app/database.php';
+
 // Root path for assets
 define('ASSET_ROOT',
     'http://'.$_SERVER['HTTP_HOST'].

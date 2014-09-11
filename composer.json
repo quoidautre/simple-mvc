@@ -1,5 +1,8 @@
 {
     "require": {
         "illuminate/database": "4.1.*"
+    },
+    "autoload": {
+        "app/models"
     }
 }
