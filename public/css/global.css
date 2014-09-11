@@ -1,16 +1,12 @@
-html {
-    font-size:62.5%;
-}
-
 body {
-    font: 1.4em 'Helvetica', 'Arial', sans-serif;
+    font: 1em 'Helvetica', 'Arial', sans-serif;
 }
 
 p {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
-#main-content {
+.content {
     width: 800px;
     width: 70%;
     margin: 32px auto;

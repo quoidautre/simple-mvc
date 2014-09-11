@@ -9,7 +9,7 @@
         <![endif]-->
     </head>
     <body>
-        <div id="main-content">
+        <div class="content">
             <header class="main">
                 <h1>Welcome to the home/index view</h1>
             </header>
