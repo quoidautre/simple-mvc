@@ -19,7 +19,10 @@ class Controller
     public function view($view, $data)
     {
         // $data passed into method is now available in this view
-        require_once '../app/views/' . $view . '.php';
+        //require_once '../app/views/' . $view . '.php';
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
+        $view = new View('../app/views/' . $view . '.php');
     }
 
     /**

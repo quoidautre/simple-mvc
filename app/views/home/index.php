@@ -19,6 +19,8 @@
             <code>/home/index/[name]/[mood]</code>
 
             <p><?php echo $data['name']; ?> is <?php echo $data['mood']; ?></p>
+
+            <p>%{{ $data['name'] }} is %{{ $data['mood'] }}</p>
         </div>
     </body>
 </html>
