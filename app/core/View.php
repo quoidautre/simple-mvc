@@ -33,11 +33,10 @@ class View
         $this->file = $file;
         $this->data = $data;
 
-        $twigLoader = new Twig_Loader_Filesystem();
-        $twigLoader->addPath(INC_ROOT . '/app/views', '__main__');
+        $twigLoader = new Twig_Loader_Filesystem(INC_ROOT . '/app/views', '__main__');
         $this->twig = new Twig_Environment($twigLoader,
             [
-                'cache' => INC_ROOT . '/app/cache'
+                'cache' => INC_ROOT . '/app/cache',
             ]);
     }
 
@@ -58,7 +57,7 @@ class View
      */
     public function parseView()
     {
-        $file = $this->file . '.html';
+        $file = $this->file . '.php';
 
         try
         {
@@ -72,20 +71,22 @@ class View
 
         catch(Twig_Error_Loader $e)
         {
-            echo "Loader error!";
-            return $e->getMessage();
+            return $this->getErrorMessage('loader', $e->getMessage());
         }
 
         catch(Twig_Error_Runtime $e)
         {
-            echo "Runtime error!";
-            return $e->getMessage();
+            return $this->getErrorMessage('runtime', $e->getMessage());
         }
 
         catch(Twig_Error_Syntax $e)
         {
-            echo 'Syntax error!';
-            return $e->getMessage();
+            return $this->getErrorMessage('syntax', $e->getMessage());
         }
+    }
+
+    private function getErrorMessage($errorType, $errorMessage)
+    {
+        return sprintf("A %s error occured: %s", $errorType, $errorMessage);
     }
 } 
