@@ -11,18 +11,21 @@ class Controller
     /**
      * Render a view
      *
-     * @param string $view The name of the view to include
+     * @param string $viewName The name of the view to include
      * @param array  $data Any data that needs to be available within the view
      *
      * @return void
      */
-    public function view($view, $data)
+    public function view($viewName, $data)
     {
         // $data passed into method is now available in this view
         //require_once '../app/views/' . $view . '.php';
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
-        $view = new View('../app/views/' . $view . '.php');
+
+        $view = new View($viewName, $data);
+
+        echo $view;
     }
 
     /**
