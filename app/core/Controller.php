@@ -18,13 +18,10 @@ class Controller
      */
     public function view($viewName, $data)
     {
-        // $data passed into method is now available in this view
-        //require_once '../app/views/' . $view . '.php';
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
-
+		// Create a new view and display the parsed contents
         $view = new View($viewName, $data);
 
+		// View makes use of the __toString magic method to do this
         echo $view;
     }
 
