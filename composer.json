@@ -1,8 +1,16 @@
 {
     "require": {
-        "illuminate/database": "4.1.*"
+        "illuminate/database": "4.1.*",
+        "twig/twig": "1.*"
+
     },
     "autoload": {
-        "app/models"
+        "classmap": [
+			"app/models",
+            "app/core"
+		],
+        "files": [
+            "app/database.php"
+        ]
     }
 }

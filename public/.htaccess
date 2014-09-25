@@ -2,8 +2,9 @@ Options -MultiViews
 Options -Indexes
 
 RewriteEngine On
-RewriteBase /path/to/public
+RewriteBase /
 
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l

@@ -11,15 +11,18 @@ class Controller
     /**
      * Render a view
      *
-     * @param string $view The name of the view to include
+     * @param string $viewName The name of the view to include
      * @param array  $data Any data that needs to be available within the view
      *
      * @return void
      */
-    public function view($view, $data)
+    public function view($viewName, $data)
     {
-        // $data passed into method is now available in this view
-        require_once '../app/views/' . $view . '.php';
+		// Create a new view and display the parsed contents
+        $view = new View($viewName, $data);
+
+		// View makes use of the __toString magic method to do this
+        echo $view;
     }
 
     /**
