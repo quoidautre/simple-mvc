@@ -1,4 +1,4 @@
 simple-mvc
 ==========
 
-A very simple PHP MVC application.
+A very simple PHP MVC application skeleton.
