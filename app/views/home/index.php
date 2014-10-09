@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Simple MVC</title>
-        <link rel="stylesheet" href="<?php echo ASSET_ROOT; ?>/css/global.css">
+        <link rel="stylesheet" href="{{ ASSET_URL }}/css/global.css">
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
