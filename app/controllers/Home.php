@@ -18,7 +18,8 @@ class Home extends Controller
 
         $this->view('home/index', [
             'name' => $user->name,
-            'mood' => $mood
+            'mood' => $mood,
+            'ASSET_URL' => ASSET_ROOT
         ]);
     }
 }
