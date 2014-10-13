@@ -26,7 +26,7 @@ class Controller
     public function view($viewName, $data)
     {
 	// Create a new view and display the parsed contents
-	$env = array('cache' => INC_ROOT . '/app/cache');
+	$env = array('cache' => INC_ROOT . '/app/cache'); // use the config file maybe ?
         $view = new View($viewName, $data, $env);
  	
  	// the the "globals" values in the view
