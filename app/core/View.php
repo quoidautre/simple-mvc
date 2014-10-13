@@ -24,20 +24,34 @@ class View
     private $twig;
 
     /**
+     * [$env Environment variables]
+     * @var array
+     */
+    public $env = array('debug' => false);
+    
+    /**
      * Initialize a new View
      *
      * @param $file
      */
-    public function __construct($file, $data = null)
+    public function __construct($file, $data = null, $env=array())
     {
         $this->file = $file;
         $this->data = $data;
 
         $twigLoader = new Twig_Loader_Filesystem(INC_ROOT . '/app/views', '__main__');
-        $this->twig = new Twig_Environment($twigLoader,
-            [
-                'cache' => INC_ROOT . '/app/cache',
-            ]);
+        $this->twig = new Twig_Environment($twigLoader, array_merge($this->env,$env));
+    }
+    
+    /**
+     * [initializeDatas Set the default values passed in the view (all views)]
+     * @param  array  $datas [description]
+     * @return [type]        [description]
+     */
+    public function initializeDatas(array $datas=array()) {        
+        if ($datas) {
+            $this->data = array_merge($this->data,$datas) ;
+        }        
     }
 
     /**
