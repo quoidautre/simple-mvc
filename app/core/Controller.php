@@ -8,6 +8,13 @@
  */
 class Controller
 {
+	
+     /**
+     * [$configFilePath Path of the config file]
+     * @var string
+     */
+    public $configFilePath = '../app/config/config.ini';
+	
     /**
      * Render a view
      *
@@ -18,10 +25,14 @@ class Controller
      */
     public function view($viewName, $data)
     {
-		// Create a new view and display the parsed contents
-        $view = new View($viewName, $data);
-
-		// View makes use of the __toString magic method to do this
+	// Create a new view and display the parsed contents
+	$env = array('cache' => INC_ROOT . '/app/cache');
+        $view = new View($viewName, $data, $env);
+ 	
+ 	// the the "globals" values in the view
+        $view->initializeDatas(array('ASSET_URL' => $this->getConfig()->getValue('assets_root')));
+	
+	// View makes use of the __toString magic method to do this
         echo $view;
     }
 
@@ -37,5 +48,23 @@ class Controller
         require_once '../app/models/' . ucfirst($model) . '.php';
 
         return new $model();
+    }
+    
+     /**
+     * [getConfig description]
+     * @param  [type] $path [description]
+     * @return [type]       [description]
+     */
+    public function getConfig() 
+    {
+        require_once '../app/core/Config.php';
+        require_once '../app/core/ConfigIni.php';
+        
+        if (!class_exists('ConfigIni')) throw new Exception("ConfigIni class not available", 1);        
+
+        $config = new ConfigIni($this->configFilePath);
+
+        return $config;
+    
     }
 }
